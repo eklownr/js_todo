@@ -13,19 +13,18 @@ function renderTodoList() {
 
     for (let i=0; i<todoList.length; i++){
         const todoObject = todoList[i];
-        //const name = todoObject.name;
-        //const date = todoObject.date;
         const {name, date} = todoObject;
         const html = `
         <div>${name}</div>
         <div>${date}</div>
         <button onclick="
-            todoList.splice(${i}, 1)
-            renderTodoList()
+            todoList.splice(${i}, 1);
+            renderTodoList();
         ">Delete</button>
         `;
         todoListHtml += html;
     }
+    console.log(todoListHtml) // TEST
     document.querySelector('.js_todo_list')
         .innerHTML = todoListHtml;
 }
