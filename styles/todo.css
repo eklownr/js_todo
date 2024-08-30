@@ -4,6 +4,7 @@ body {
 
 .todo-grid,
 .todo-input-grid {
+    font-size: 18px;
     display: grid;
     grid-template-columns:  200px 150px 100px;
     column-gap: 10px;
@@ -12,10 +13,13 @@ body {
 .todo-input-grid {
     margin-bottom: 10px;
 }
+.todo-grid {
+    align-items: center;
+}
 
 .name-input,
 .date-input {
-    font-size: 16px;
+    font-size: 18px;
     padding: 6px;
 }
 
@@ -23,9 +27,13 @@ body {
 .delete-todo-button {
     background-color: green;
     color: white;
-    font-size: 16;
+    font-size: 18;
     border: none;
+    cursor: pointer;
 }
 .delete-todo-button {
-    background-color: red;
+    background-color: rgb(159, 11, 0);
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
