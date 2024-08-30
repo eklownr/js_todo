@@ -17,17 +17,15 @@ function renderTodoList() {
         //const date = todoObject.date;
         const {name, date} = todoObject;
         const html = `
-        <p>
-        ${name} ${date}
+        <div>${name}</div>
+        <div>${date}</div>
         <button onclick="
             todoList.splice(${i}, 1)
             renderTodoList()
         ">Delete</button>
-        </p>`;
+        `;
         todoListHtml += html;
     }
-    console.log(todoListHtml);
-
     document.querySelector('.js_todo_list')
         .innerHTML = todoListHtml;
 }
@@ -42,7 +40,6 @@ function addTodo() {
     });
 
     nameInputElement.value = '';
-    console.log(todoList);
     renderTodoList();
 }
 

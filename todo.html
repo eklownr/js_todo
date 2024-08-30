@@ -1,15 +1,16 @@
 <html>
   <head>
     <title>todo</title>
+      <style rel="stylesheet" href="styles/todo.css"></style>
   </head>
   <body>
     <script src="scripts/todo.js"></script>
     <h2>My todo app</h2>
-    <div>
+    <div class="todo_input_grid">
       <input placeholder="Todo name" class="js_name_input">
       <input type="date" class="js_date_input">
       <button onclick="addTodo();">Add</button>
     </div>
-    <div class="js_todo_list"></div>
+    <div class="js_todo_list todo_grid"></div>
   </body>
 </html>
