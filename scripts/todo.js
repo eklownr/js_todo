@@ -20,11 +20,12 @@ function renderTodoList() {
         <button onclick="
             todoList.splice(${i}, 1);
             renderTodoList();
-        ">Delete</button>
+        "
+        class="delete-todo-button">Delete
+        </button>
         `;
         todoListHtml += html;
     }
-    console.log(todoListHtml) // TEST
     document.querySelector('.js_todo_list')
         .innerHTML = todoListHtml;
 }
