@@ -11,7 +11,7 @@ const todoList = [{
 function renderTodoList() {
     let todoListHtml = '';
 
-    todoList.forEach(function(todoObject, i) {
+    todoList.forEach((todoObject, i) => {
         const {name, date} = todoObject;
         const html = `
             <div>${name}</div>
@@ -58,3 +58,10 @@ function addTodo() {
     nameInputElement.value = '';
     renderTodoList();
 }
+
+// Add eventListener to Enter-key
+document.body.addEventListener('keydown', (event) =>{
+    if (event.key === 'Enter') {
+        addTodo();
+    }
+})
