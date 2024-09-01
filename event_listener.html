@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>addEventListener</title>
+    </head>
+    <body>
+        <h2>Event Listener</h2>
+        <button onclick="" class="js-button">Click</button>
+        <script>
+            // Add envent listener to the button with class js-button
+            const buttonElement = document.querySelector('.js-button');
+
+            const eventListenerFunction1 = () => {
+                console.log('Click')
+            }
+            const eventListenerFunction2 = () => {
+                console.log('Click2')
+            }
+
+            buttonElement.addEventListener('click', eventListenerFunction1);
+            buttonElement.removeEventListener('click', eventListenerFunction1)
+            buttonElement.addEventListener('click', eventListenerFunction2);
+            buttonElement.addEventListener('click', () => {
+                console.log('Click3');
+            });
+
+            // 
+            document.body.addEventListener('keydown', (event) =>{
+                console.log(event.key);
+                if (event.key === 'Enter') {
+                    console.log('Enter key is pressd!')
+                }
+            })
+
+        </script>   
+    </body>
+</html>
