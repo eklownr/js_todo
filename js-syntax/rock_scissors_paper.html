@@ -10,31 +10,38 @@
     <button onclick="play('scissors');" class="move-button3">scissors</button>
 
     <p class="result js-result">Result: </p>
+    <p class="point js-point">Result: </p>
 
 
     <script>
-
+      // globals
+      let playerPoint = 0;
+      let comuterPoint = 0;
+    
+      // play the game
       function play(playerMove) {
         const resultElement = document.querySelector('.js-result');
+        const pointElement = document.querySelector('.js-point');
         computerMove = pickComputerMove();
-        let res = ""
+        let res = "";
+        let points = "";
 
         if (playerMove === computerMove) {
-          res = "Tie " + "<b>You:</b> " + playerMove + " Computer: " + computerMove;
-        } else if (playerMove === "rock" && computerMove === "paper") {
-          res = "You lose! " + "<b>You:</b> " + playerMove + " Computer: " + computerMove;
-        } else if (playerMove === "rock" && computerMove === "scissors") {
-          res = "You win! " + "<b>You:</b> " + playerMove + " Computer: " + computerMove;
-        } else if (playerMove === "scissors" && computerMove === "rock") {
-          res = "You lose! " + "<b>You:</b> " + playerMove + " Computer: " + computerMove;
-        } else if (playerMove === "scissors" && computerMove === "paper") {
-          res = "You win! " + "<b>You:</b> " + playerMove + " Computer: " + computerMove;
-        } else if (playerMove === "paper" && computerMove === "scissors") {
-          res = "You lose! " + "<b>You:</b> " + playerMove + " Computer: " + computerMove;
-        } else if (playerMove === "paper" && computerMove === "rock") {
-          res = "You win!" + "<b>You:</b> " + playerMove + " Computer: " + computerMove;
+          res = "Tie " + "<b>You:</b> " + playerMove + " <b>Computer: </b>" + computerMove;
+        } else if (
+          playerMove === "rock" && computerMove === "scissors" ||
+          playerMove === "scissors" && computerMove === "paper" ||
+          playerMove === "paper" && computerMove === "rock") {
+            res = "You win!" + "<b>You:</b> " + playerMove + " <b>Computer: <b/>" + computerMove;
+            playerPoint ++;
+        } else {
+          res = "You lose! " + "<b>You:</b> " + playerMove + " <b>Computer: </b>" + computerMove;
+          comuterPoint++;
         }
+
+        points = "You: " + playerPoint + " Comuter: " + comuterPoint;
         resultElement.innerHTML = res;
+        pointElement.innerHTML = points;
       }
 
       // return computer move
