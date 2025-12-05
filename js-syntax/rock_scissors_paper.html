@@ -4,26 +4,37 @@
     <title>functions</title>
   </head>
   <body>
+    <h2>Play rock, paper, scissors</h1>
+    <button onclick="play('rock');" class="move-button1">rock</button>
+    <button onclick="play('paper');" class="move-button2">paper</button>
+    <button onclick="play('scissors');" class="move-button3">scissors</button>
+
+    <p class="result js-result">Result: </p>
+
 
     <script>
 
       function play(playerMove) {
+        const resultElement = document.querySelector('.js-result');
         computerMove = pickComputerMove();
+        let res = ""
+
         if (playerMove === computerMove) {
-          console.log("Tie", playerMove, computerMove);
+          res = "Tie " + "<b>You:</b> " + playerMove + " Computer: " + computerMove;
         } else if (playerMove === "rock" && computerMove === "paper") {
-          console.log("You lose!", playerMove, computerMove);
+          res = "You lose! " + "<b>You:</b> " + playerMove + " Computer: " + computerMove;
         } else if (playerMove === "rock" && computerMove === "scissors") {
-          console.log("You win!", playerMove, computerMove);
+          res = "You win! " + "<b>You:</b> " + playerMove + " Computer: " + computerMove;
         } else if (playerMove === "scissors" && computerMove === "rock") {
-          console.log("You lose!", playerMove, computerMove);
+          res = "You lose! " + "<b>You:</b> " + playerMove + " Computer: " + computerMove;
         } else if (playerMove === "scissors" && computerMove === "paper") {
-          console.log("You win!", playerMove, computerMove);
+          res = "You win! " + "<b>You:</b> " + playerMove + " Computer: " + computerMove;
         } else if (playerMove === "paper" && computerMove === "scissors") {
-          console.log("You lose!", playerMove, computerMove);
+          res = "You lose! " + "<b>You:</b> " + playerMove + " Computer: " + computerMove;
         } else if (playerMove === "paper" && computerMove === "rock") {
-          console.log("You win!", playerMove, computerMove);
+          res = "You win!" + "<b>You:</b> " + playerMove + " Computer: " + computerMove;
         }
+        resultElement.innerHTML = res;
       }
 
       // return computer move
@@ -40,8 +51,6 @@
         }
         return computerMove;
       }
-
-      play("rock")
 
     </script>
   </body>
