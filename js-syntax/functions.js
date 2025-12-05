@@ -44,7 +44,7 @@ passingFunc(function () {
   console.log("Passing a function to a function!")
 })
 
-// set timeout and countdown
+/* set timeout and countdown */
 function countdown(seconds) {
   setTimeout(() => {
     console.log("Timeout!")
@@ -52,7 +52,7 @@ function countdown(seconds) {
   setTimeout(() => {
     console.log("Back to business!")
   }, (seconds+2)*1000);
-  // global func setIntervall takes 2 argumet: anonymous callback function, and delay in ms
+  // global func setIntervall takes 2 argumets: anonymous callback function, and delay in ms
   // function call → returns a number (ID)
   const interval = setInterval(() => {
     console.log(seconds);
