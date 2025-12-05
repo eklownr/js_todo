@@ -7,7 +7,7 @@ const arrowFunction = (param) => {
   return param
 }
 const regularFunction = function(param) {
-  console.log("arrowFunktion () => {}")
+  console.log("regular Funktion")
   return param
 }
 
@@ -44,19 +44,20 @@ passingFunc(function () {
   console.log("Passing a function to a function!")
 })
 
-setTimeout(() => {
-  console.log("Back to business!")
-}, 4500);
-setTimeout(() => {
-  console.log("Timeout!")
-}, 0);
-
+// set timeout and countdown
 function countdown(seconds) {
-  let counter = seconds;
+  setTimeout(() => {
+    console.log("Timeout!")
+  }, 0);
+  setTimeout(() => {
+    console.log("Back to business!")
+  }, (seconds+2)*1000);
+  // global func setIntervall takes 2 argumet: anonymous callback function, and delay in ms
+  // function call → returns a number (ID)
   const interval = setInterval(() => {
-    console.log(counter);
-    counter--;
-    if (counter < 0) {
+    console.log(seconds);
+    seconds--;
+    if (seconds < 0) {
       clearInterval(interval);
       console.log('Ding!');
     }
@@ -79,6 +80,7 @@ skipDivThree()
 arr1 = [3,3,4,5,6]
 console.log(arr1, " array1 to dubbel -> ", dubbelArray(arr1))
 object1.fun() // runs funtion hello
-const funcReturn = arrowFunction("test to add param")
+const funcReturn = arrowFunction("test arrow func")
 console.log(funcReturn)
-countdown(3)
+console.log(regularFunction('test reg func'))
+countdown(5)

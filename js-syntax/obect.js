@@ -5,6 +5,9 @@ const obj = {
     },
     arrow: () => {
       console.log(this.name); // this är inte obj – kan ge `undefined`
+    },
+    test: () => {
+        console.log(obj.name)
     }
   };
 
