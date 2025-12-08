@@ -13,3 +13,4 @@ const obj = {
 
   obj.arrow();
   obj.regular();
+  obj.test();
