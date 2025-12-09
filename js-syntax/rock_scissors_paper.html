@@ -2,12 +2,44 @@
 <html>
   <head>
     <title>functions</title>
+    <style>
+      body {
+        background-color: black;
+        color: beige;
+        margin: 40px;
+      }
+      .move-button1 {
+        background-color: red;
+        border: 4px solid white;
+        border-radius: 50px;
+        margin: 10px;
+        margin-left: 0px;
+      }
+      .move-button2 {
+        background-color: green;
+        border: 4px solid white;
+        border-radius: 50px;
+        margin: 10px;
+      }
+      .move-button3 {
+        background-color: blue;
+        border: 4px solid white;
+        border-radius: 50px;
+        margin: 10px;
+      }
+      .move-icon {
+        height: 50px;
+      }
+    </style>
   </head>
   <body>
     <h2>Play rock, paper, scissors</h1>
-    <button onclick="play('rock');" class="move-button1">rock</button>
-    <button onclick="play('paper');" class="move-button2">paper</button>
-    <button onclick="play('scissors');" class="move-button3">scissors</button>
+    <button onclick="play('rock');" class="move-button1">
+      <img src="images/rock.png" class="move-icon" alt="rock"></button>
+    <button onclick="play('paper');" class="move-button2">
+      <img src="images/paper.png" class="move-icon" alt="paper"> </button>
+    <button onclick="play('scissors');" class="move-button3">
+      <img src="images/scissors.png" class="move-icon" alt="scissors"></button>
 
     <p class="result js-result">Result: </p>
     <p class="point js-point">Points: </p>
