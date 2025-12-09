@@ -1,4 +1,3 @@
-//const todoList = [];
 const todoList = [{
     name: 'Make dinner',
     date: '2024-08-29'
@@ -11,7 +10,6 @@ const todoList = [{
 
 function renderTodoList() {
     let todoListHtml = '';
-
     todoList.forEach((todoObject, i) => {
         const {name, date} = todoObject;
         const html = `
@@ -26,23 +24,6 @@ function renderTodoList() {
         `;
         todoListHtml += html;
     });
-
-//    for (let i=0; i<todoList.length; i++){
-//        const todoObject = todoList[i];
-//        const {name, date} = todoObject;
-//        const html = `
-//            <div>${name}</div>
-//            <div>${date}</div>
-//            <button onclick="
-//                todoList.splice(${i}, 1);
-//                renderTodoList();
-//            "
-//            class="delete-todo-button">Delete
-//            </button>
-//        `;
-//        todoListHtml += html;
-//    }
-
     document.querySelector('.js_todo_list')
         .innerHTML = todoListHtml;
 }
@@ -55,10 +36,10 @@ function addTodo() {
         name: nameInputElement.value,
         date: dateInputElement.value
     });
-
     nameInputElement.value = '';
     renderTodoList();
 }
+
 
 // Add eventListener to Enter-key
 document.body.addEventListener('keydown', (event) =>{
