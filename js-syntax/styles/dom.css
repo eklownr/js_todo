@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+.subscribe-button {
+    background-color: forestgreen;
+    color: white;
+    border: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+.is-subscibed {
+    background-color: lightgray;
+    color: black;
+}
+.order-amount {
+    font-size: 18px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+.calculate-button {
+    background-color: forestgreen;
+    color: white;
+    border: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
