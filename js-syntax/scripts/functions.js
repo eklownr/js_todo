@@ -75,12 +75,13 @@ const oneLine = () => 2+3;
 console.log("One Line Function: ", oneLine());
 
 
-// console.log()
-skipDivThree()
-arr1 = [3,3,4,5,6]
-console.log(arr1, " array1 to dubbel -> ", dubbelArray(arr1))
-object1.fun() // runs funtion hello
-const funcReturn = arrowFunction("test arrow func")
-console.log(funcReturn)
-console.log(regularFunction('test reg func'))
-countdown(5)
+// // console.log()
+// skipDivThree()
+// arr1 = [3,3,4,5,6]
+// console.log(arr1, " array1 to dubbel -> ", dubbelArray(arr1))
+// object1.fun() // runs funtion hello
+// const funcReturn = arrowFunction("test arrow func")
+// console.log(funcReturn)
+// console.log(regularFunction('test reg func'))
+// countdown(5)
+
