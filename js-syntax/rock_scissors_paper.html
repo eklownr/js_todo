@@ -30,6 +30,22 @@
       .move-icon {
         height: 50px;
       }
+      .move{
+        font-size: 20px;
+      }
+      .result {
+        font-size: 30px;
+        margin-top: 50px;
+      }
+      .point {
+        font-size: 30px;
+      }
+      .reset {
+        background-color: red;
+        border: 4px solid white;
+        border-radius: 50px;
+        margin: 10px;
+      }
     </style>
   </head>
   <body>
@@ -41,40 +57,46 @@
     <button onclick="play('scissors');" class="move-button3">
       <img src="images/scissors.png" class="move-icon" alt="scissors"></button>
 
-    <p class="result js-result">Result: </p>
+    <p class="result js-result">How win?</p>
+    <p class="js-move move"> <img src="images/scissors.png" class="move-icon" alt="scissors"></p>
     <p class="point js-point">Points: </p>
 
-    <button onclick="resetPoint();" >Reset points</button>
+    <button onclick="resetPoint()"; class="reset" >Reset points</button>
 
     <script>
       // globals
       let playerPoint = 0;
       let computerPoint = 0;
       const pointElement = document.querySelector('.js-point');
-      let showPoints = "You: " + playerPoint + " Computer: " + computerPoint;
+      let showPoints = "";
     
       // play the game
       function play(playerMove) {
         const resultElement = document.querySelector('.js-result');
+        const moveElement = document.querySelector('.js-move');
         computerMove = pickComputerMove();
         let res = "";
 
         if (playerMove === computerMove) {
-          res = "<h1>Tie </h1>" + "<b>You:</b> " + playerMove + " <b>Computer: </b>" + computerMove;
+          res = "Tie";
         } else if (
           playerMove === "rock" && computerMove === "scissors" ||
           playerMove === "scissors" && computerMove === "paper" ||
           playerMove === "paper" && computerMove === "rock") {
-            res = "<h1>You win!</h1>" + "<b>You:</b> " + playerMove + " <b>Computer: <b/>" + computerMove;
+            res = "You win!";
             playerPoint ++;
         } else {
-          res = "<h1>You lose! </h1>" + "<b>You:</b> " + playerMove + " <b>Computer: </b>" + computerMove;
+          res = "You lose!";
           computerPoint++;
         }
 
         showPoints = "You: " + playerPoint + " Comuter: " + computerPoint;
         resultElement.innerHTML = res;
-        pointElement.innerHTML = showPoints;
+        moveElement.innerHTML = `You:
+          <img src="images/${playerMove}.png" class="move-icon" alt="rock">
+          Computer:
+          <img src="images/${computerMove}.png" class="move-icon" alt="scissors"> `;
+          pointElement.innerHTML = showPoints;
       }
 
       // return computer move
